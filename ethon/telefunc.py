@@ -120,11 +120,11 @@ async def force_sub(client, channel, id, ft):
         x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
         left = x.stringify()
         if 'left' in left:
-            s, r = True, f"{ft}\n\nAlso join @DroneBots"
+            s, r = True, f"{ft}\n\n也可加入 @asmrgay"
         else:
             s, r = False, None
     except UserNotParticipantError:
-        s, r = True, f"To use this bot you've to join @{channel}.\n\nAlso join @DroneBots"
+        s, r = True, f"要使用这个机器人你必须加入 @{channel}.\n\n也可加入 @asmrgay"
     except Exception:
-        s, r = True, "ERROR: Add in ForceSub channel, or check your channel id."
+        s, r = True, "ERROR: 添加ForceSub频道配置，或检查您的频道id"
     return s, r
